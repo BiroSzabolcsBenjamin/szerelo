@@ -1,9 +1,7 @@
 file=open("szerelo.txt","r",encoding="UTF-8")
-file2=open("abc.txt","w")
+file2=open("abc.txt","w",encoding="UTF-8")
 file3=open("ujszerelo.txt","w",encoding="UTF-8")
 file_data=[]
-file_data2=[]
-file_data3=[]
 
 for i in file:
     if(i[-1]=='\n'):
@@ -14,7 +12,7 @@ for i in file:
 del file_data[0]
 
 #1.
-print("Ennyi szerelő van: ",len(file_data))
+print("Szerelők létszáma: ",len(file_data))
 
 #2.
 for i in range(len(file_data)):
@@ -28,13 +26,10 @@ for i in range(len(file_data)):
 
 #4.
 for i in range(len(file_data)):
-    file_data.sort()
     file2.write(file_data[i][1]+"\n")
-
 
 #5.
 for i in range(len(file_data)):
     del file_data[i][0]
     file3.write(file_data[i][0]+"\t"+file_data[i][1]+"\n")
-
 
